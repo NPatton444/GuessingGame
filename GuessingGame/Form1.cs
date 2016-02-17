@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace GuessingGame
 {
@@ -18,8 +19,8 @@ namespace GuessingGame
         //creates a random number between 1 and 100 and stores it in a global 
         //variable that can be used throughout the program 
         public static Random randNum = new Random();
+        //int rand = randNum.Next(1, 101);
         int rand = randNum.Next(1, 101);
-
         //Creates List
         public static List<int> guesses = new List<int>();
 
@@ -49,11 +50,16 @@ namespace GuessingGame
             {
                 outputLabel.Text = "You Got it!";
 
+                Thread.Sleep(3000);
+
                 UserControl1 rs = new UserControl1();
                 this.Controls.Add(rs);
 
-                Form f = this;
-                this.Controls.Remove(f);
+                //Make form invisible
+                titleLabel.Visible = false;
+                promptLabel.Visible = false;
+                inputBox.Visible = false;
+                guessButton.Visible = false;
             }
 
             // clear out the input box 

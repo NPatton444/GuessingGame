@@ -14,21 +14,27 @@ namespace GuessingGame
         public UserControl1()
         {
             InitializeComponent();
+        }
+
+        private void UserControl1_Load(object sender, EventArgs e)
+        {
             //Display Number of guesses
             label1.Text = "Number of Guesses: " + Convert.ToString(Form1.guesses.Count());
 
-            //Display Order of Guesses
-            for(int i = 0; i <= Form1.guesses.Count(); i++)
+            //Display Order of Guesses\
+            label1.Text += "\nOriginal order:\n";
+            for (int i = 0; i < Form1.guesses.Count(); i++)
             {
-                label1.Text = "\nOriginal order:\n" + " " + Convert.ToString(Form1.guesses[i]);
+                label1.Text += " " + Form1.guesses[i];
             }
 
             //Sorted order
+            label1.Text += "\nSorted order:\n";
             Form1.guesses.Sort();
-            for (int i = 0; i <= Form1.guesses.Count(); i++)
-                {
-                    label1.Text = "\nSorted order:\n" + " " + Convert.ToString(Form1.guesses[i]);
-                }
+            for (int i = 0; i < Form1.guesses.Count(); i++)
+            {
+                label1.Text += " " + Convert.ToString(Form1.guesses[i]);
+            }
         }
     }
 }
