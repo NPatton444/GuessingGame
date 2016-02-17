@@ -1,6 +1,8 @@
 ﻿/// Description: The program generates a random number between 1-100 which
 ///              the use must guess
 /// Author:      Mr. T
+/// Additions: Noah Patton
+/// Date: February 17, 2016
 
 using System;
 using System.Collections.Generic;
